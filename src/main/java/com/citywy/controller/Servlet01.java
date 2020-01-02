@@ -20,6 +20,7 @@ public class Servlet01 extends HttpServlet {
         String email = request.getParameter("email");
         System.out.println("email:"+email);
 
-        request.getRequestDispatcher("/index.jsp").forward(request,response);
+
+        request.getRequestDispatcher("/ck_resume_step4.jsp").forward(request,response);
     }
 }
