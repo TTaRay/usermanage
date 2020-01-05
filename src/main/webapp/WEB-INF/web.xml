@@ -2,14 +2,21 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://java.sun.com/xml/ns/javaee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
-
   <servlet>
-    <servlet-name>Servlet01</servlet-name>
-    <servlet-class>com.citywy.controller.Servlet01</servlet-class>
+    <servlet-name>indexcontroller</servlet-name>
+    <servlet-class>com.citywy.controller.IndexController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Servlet01</servlet-name>
-    <url-pattern>/test1.htm</url-pattern>
+    <servlet-name>indexcontroller</servlet-name>
+    <url-pattern>/index.htm</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>NewsController</servlet-name>
+    <servlet-class>com.citywy.controller.NewsController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewsController</servlet-name>
+    <url-pattern>/news/list.htm</url-pattern>
   </servlet-mapping>
 
 
