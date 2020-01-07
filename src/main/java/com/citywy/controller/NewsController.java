@@ -14,8 +14,9 @@ public class NewsController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-
         System.out.println("新闻列表页");
+        int i = 100/0;
+        System.out.println(i);
         request.getRequestDispatcher("/admin/new_list.jsp").forward(request,response);
     }
 }

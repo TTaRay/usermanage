@@ -18,7 +18,11 @@
     <servlet-name>NewsController</servlet-name>
     <url-pattern>/news/list.htm</url-pattern>
   </servlet-mapping>
-
+  <error-page>
+    <error-code>500</error-code>
+    <!--location相对于webapp根/上下文,这说明它必须以一个斜线开头-->
+    <location>/admin/public/error-500.jsp</location>
+  </error-page>
 
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
