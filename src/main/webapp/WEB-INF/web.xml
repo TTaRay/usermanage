@@ -2,6 +2,15 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://java.sun.com/xml/ns/javaee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <filter>
+    <filter-name>loginFilter</filter-name>
+    <filter-class>com.citywy.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>loginFilter</filter-name>
+    <url-pattern>/news/list.htm</url-pattern>
+    <!--<servlet-name>indexcontroller</servlet-name>-->
+  </filter-mapping>
   <servlet>
     <servlet-name>indexcontroller</servlet-name>
     <servlet-class>com.citywy.controller.IndexController</servlet-class>
@@ -13,6 +22,7 @@
   <servlet>
     <servlet-name>NewsController</servlet-name>
     <servlet-class>com.citywy.controller.NewsController</servlet-class>
+    <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
     <servlet-name>NewsController</servlet-name>
@@ -22,6 +32,10 @@
     <error-code>500</error-code>
     <!--location相对于webapp根/上下文,这说明它必须以一个斜线开头-->
     <location>/admin/public/error-500.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/admin/public/error-404.jsp</location>
   </error-page>
 
   <welcome-file-list>
