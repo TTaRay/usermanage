@@ -150,30 +150,7 @@ public class DBConnUtil {
             e.printStackTrace();
             throw new RuntimeException(e.getMessage());
         } finally {
-            //关闭资源
-            if(rs!=null){
-                try {
-                    rs.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if(pstmt!=null){
-                try {
-                    pstmt.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                pstmt=null;
-            }
-            if(conn!=null){
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                conn=null;
-            }
+            close(rs,pstmt,conn);
         }
     }
 
